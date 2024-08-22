@@ -4,7 +4,6 @@ void main()
 int a[10],i,j,min,n,temp;
 printf("enter the total no of elements:");
 scanf("%d",&n);
-
 printf("enter the elements of the array:");
 for(i=0;i<n;i++)
 {
