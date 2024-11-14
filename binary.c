@@ -1,50 +1,55 @@
 #include<stdio.h>
-int main()
-{
-int i,n,x,flag,time;
-printf("enter the number of elements:");
-scanf("%d",&n);
-time++;
-int a[n],mid,left=0,right=n-1;
-time++;
-time++;
-printf("enter the elements:");
-time++;
-for(i=0;i<n;i++)
-{
-time++;
-scanf("%d",&a[i]);
-time++;
-}
-printf("enter the element to be searched:");
-time++;
-scanf("%d",&x);
-time++;
-while(left<=right){
-time++;
-mid=(left+right)/2;
-time++;
-if(x==a[mid]){
-flag=1;
-time++;
-break;
-}
-else if(x>a[mid]){
-right=mid-1;
-time++;
-}
-}
-if(flag==0){
-time++;
-printf("element not found\n");
-time++;
-}
-else if(flag==1){
-printf("element found at location %d in ",mid+1);
-time++;
-}
-time++;
-printf("space complexity=%d\n time complexity=%d\n",32+(4*n),time);
-}
+int main() {
 
+    int  i, n, x, flag = 0, time=0;
+    time++;
 
+    printf("Enter the number of elements: ");
+    time++;
+    scanf("%d", &n);
+    time++;
+
+    int a[n], mid, left = 0, right = n - 1;
+    time++; time++;
+
+    for (i = 0;i < n;i++) {
+        printf("Enter the elements: ");
+        time++;
+        scanf("%d", &a[i]);
+        time++;
+    }
+
+    printf("Enter the element to be searched: ");
+    time++;
+    scanf("%d", &x);
+    time++;
+
+    while (left <= right) {
+        mid = (left + right) / 2;
+        time++;
+
+        if (x == a[mid]) {
+            flag = 1;
+            break;
+        }
+        else if (x > a[mid]) {
+            left = mid + 1;
+            time++;
+        }
+        else if (x < a[mid]) {
+            right = mid - 1;
+            time++;
+        }
+    }
+    if (flag == 0) {
+        printf("Element not found\n");
+        time++;
+    }
+    else if (flag == 1) {
+        printf("Element found at location %d\n", mid + 1);
+        time++;
+    }
+
+    time++;
+    printf("Space complexity = %d\nTime complexity = %d\n", 32 + (4 * n), time);
+}
